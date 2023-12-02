@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><h1>Examen final</h1></title>
+</head>
+<body>
+    <script>
+
+const correo = prompt('Ingrese su dirección de correo electrónico:');
+let contraseña = prompt('Ingrese su contraseña:');
+let mensaje = '';
+
+switch (true) {
+  case (correo.charAt(0) >= '0' && correo.charAt(0) <= '9') || correo.charAt(0) === ' ' || !correo.endsWith('cumbre.edu.bo'):
+    const randomNumber = Math.floor(Math.random() * 11);
+    const fechaActual = new Date().toLocaleString();
+    mensaje = `Correo no válido. Vuelva a intentarlo en ${randomNumber} seg. ${fechaActual}`;
+    alert(mensaje);
+    break;
+  
+  case contraseña.length <= 8 ||(!contraseña.startsWith('$') && !contraseña.startsWith('*')):
+    mensaje = 'Contraseña débil. Vuelva a intentarlo';
+    alert(mensaje);
+    break;
+  
+  default:
+    const ingresarPost = confirm('¿Desea ingresar un post?');
+    if (ingresarPost) {
+      const post = prompt('Ingrese su primer post:');
+      if (post) {
+        const words = post.split(' ');
+        console.warn(words);
+        alert('Mi primer post en JS');
+      } else {
+        const randomNumber = Math.floor(Math.random() * 11);
+        const fechaActual
+         = new Date().toLocaleString();
+        mensaje = `Post no válido. Vuelva a intentarlo en ${randomNumber} seg. ${fechaActual}`;
+        alert(mensaje);
+      }
+    }
+    break;
+}
+    </script>
+    
+</body>
+</html>

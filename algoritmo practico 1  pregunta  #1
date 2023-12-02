@@ -1,0 +1,103 @@
+
+public class MainClass {
+
+    public static void MostraMaxMinArrayEnteros(int[] arr) {
+        int max = arr[0];
+        int min = arr[0];
+
+        for (int i = 1; i < arr.Length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+        }
+
+        Console.WriteLine("Max: " + max);
+        Console.WriteLine("Min: " + min);
+    }
+
+    public static int SumaArrayEnteros(int[] arr) {
+        int sum = 0;
+        for (int i = 0; i < arr.Length; i++) {
+            sum += arr[i];
+        }
+        return sum;
+    }
+
+    public static int PromedioArrayEnteros(int[] arr) {
+        return SumaArrayEnteros(arr) / arr.Length;
+    }
+
+    public static string BuscarElementoArrayCadenas(string[] arr, string elemento) {
+        bool encontrado = false;
+        for (int i = 0; i < arr.Length; i++) {
+            if (arr[i] == elemento) {
+                encontrado = true;
+                break;
+            }
+        }
+        return encontrado.ToString();
+    }
+
+    public static int FrecuenciaArrayEnteros(int[] arr, int elemento) {
+        int frecuencia = 0;
+        for (int i = 0; i < arr.Length; i++) {
+            if (arr[i] == elemento) {
+                frecuencia++;
+            }
+        }
+        return frecuencia;
+    }
+
+    public static int FrecuenciaArrayCadenas(string[] arr, string elemento) {
+        int frecuencia = 0;
+        for (int i = 0; i < arr.Length; i++) {
+            if (arr[i] == elemento) {
+                frecuencia++;
+            }
+        }
+        return frecuencia;
+    }
+
+    public static string[] ComplementoArrayCadenasAyB(string[] A, string[] B) {
+        HashSet<string> conjuntoA = new HashSet<string>(A);
+        HashSet<string> conjuntoB = new HashSet<string>(B);
+        conjuntoA.SymmetricExceptWith(conjuntoB);
+        return conjuntoA.ToArray();
+    }
+
+    public static int[] ArrayCadenasToArrayEnteros(string[] arr) {
+        int[] intArr = new int[arr.Length];
+        for (int i = 0; i < arr.Length; i++) {
+            intArr[i] = (int)arr[i][0];
+        }
+        return intArr;
+    }
+
+    public static string[] DiferenciaArrayCadenasAyB(string[] A, string[] B) {
+        HashSet<string> conjuntoA = new HashSet<string>(A);
+        HashSet<string> conjuntoB = new HashSet<string>(B);
+        conjuntoA.ExceptWith(conjuntoB);
+        return conjuntoA.ToArray();
+    }
+
+    public static string[] ArrayEnterosToArrayCadenas(int[] arr) {
+        string[] strArr = new string[arr.Length];
+        for (int i = 0; i < arr.Length; i++) {
+            strArr[i] = ((char)arr[i]).ToString();
+        }
+        return strArr;
+    }
+
+    public static void InvertirArrayCadenas(string[] arr) {
+        for (int i = 0; i < arr.Length / 2; i++) {
+            string temp = arr[i];
+            arr[i] = arr[arr.Length - 1 - i];
+            arr[arr.Length - 1 - i] = temp;
+        }
+    }
+
+    

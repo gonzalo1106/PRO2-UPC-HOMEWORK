@@ -1,0 +1,45 @@
+public class Estudiante
+{
+    private string carnet;
+    private string codigoEstudiante;
+    private string nombre;
+    private string apellidoPaterno;
+    private string apellidoMaterno;
+    private int edad;
+
+    public string Carnet
+    {
+        get { return carnet; }
+        set { carnet = value; }
+    }
+
+    public string CodigoEstudiante
+    {
+        get { return codigoEstudiante; }
+        set { codigoEstudiante = value; }
+    }
+
+    public string Nombre
+    {
+        get { return nombre; }
+        set { nombre = value; }
+    }
+
+    public string ApellidoPaterno
+    {
+        get { return apellidoPaterno; }
+        set { apellidoPaterno = value; }
+    }
+
+    public string ApellidoMaterno
+    {
+        get { return apellidoMaterno; }
+        set { apellidoMaterno = value; }
+    }
+
+    public int Edad
+    {
+        get { return edad; }
+        set { edad = value; }
+    }
+}

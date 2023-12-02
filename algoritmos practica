@@ -1,0 +1,98 @@
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Digite un numero: ");
+        int number = int.Parse(Console.ReadLine());
+
+        int sumDigits = SumDigits(number);
+        Console.WriteLine("Suma de digitos: " + sumDigits);
+
+        int maxDigit = MaxDigit(number);
+        Console.WriteLine("Digito mayor: " + maxDigit);
+
+        int minDigit = MinDigit(number);
+        Console.WriteLine("Digito menor: " + minDigit);
+
+        int fibonacciMinDigit = Fibonacci(minDigit);
+        Console.WriteLine("Fibonacci del digito menor: " + fibonacciMinDigit);
+
+        int[] numberArray = number.ToString().Select(c => int.Parse(c.ToString())).ToArray();
+        Array.Reverse(numberArray, numberArray.Length / 2, numberArray.Length / 2);
+        Console.WriteLine("Array invertido: " + string.Join("", numberArray));
+
+        int[] firstArray = { 1, 2, 3 };
+        int[] secondArray = { 4, 5, 6 };
+        int[] unitedArray = UnionArrays(firstArray, secondArray);
+        Console.WriteLine("Arrays unidos: " + string.Join("", unitedArray));
+
+        int[] ascendingArray = SortArrayAscending(unitedArray);
+        Console.WriteLine("Array ordenado ascendentemente: " + string.Join("", ascendingArray));
+
+        int[] descendingArray = SortArrayDescending(unitedArray);
+        Console.WriteLine("Array ordenado descendentemente: " + string.Join("", descendingArray));
+    }
+
+    static int SumDigits(int number)
+    {
+        int sum = 0;
+        while (number > 0)
+        {
+            sum += number % 10;
+            number /= 10;
+        }
+        return sum;
+    }
+
+    static int MaxDigit(int number)
+    {
+        int max = int.MinValue;
+        while (number > 0)
+        {
+            max = Math.Max(max, number % 10);
+            number /= 10;
+        }
+        return max;
+    }
+
+    static int MinDigit(int number)
+    {
+        int min = int.MaxValue;
+        while (number > 0)
+        {
+            min = Math.Min(min, number % 10);
+            number /= 10;
+        }
+        return min;
+    }
+
+    static int Fibonacci(int number)
+    {
+        if (number <= 1) return number;
+        int a = 0;
+        int b = 1;
+        for (int i = 2; i <= number; i++)
+        {
+            int temp = a + b;
+            a = b;
+            b = temp;
+        }
+        return b;
+    }
+
+    static int[] UnionArrays(int[] firstArray, int[] secondArray)
+    {
+        return firstArray.Union(secondArray).ToArray();
+    }
+
+    static int[] SortArrayAscending(int[] array)
+    {
+        return array.OrderBy(x => x).ToArray();
+    }
+
+    static int[] SortArrayDescending(int[] array)
+    {
+        return array.OrderByDescending(x => x).ToArray();
+    }
+}

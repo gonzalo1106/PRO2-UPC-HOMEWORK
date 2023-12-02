@@ -1,0 +1,18 @@
+public class Estudiante
+{
+    public string Carne { get; set; }
+    public string Nombre { get; set; }
+    public List<Asistencia> Asistencias { get; set; }
+}
+
+public class Asistencia
+{
+    public DateTime Fecha { get; set; }
+    public EstadoAsistencia Estado { get; set; }
+}
+
+public enum EstadoAsistencia
+{
+    Presente,
+    Ausente
+}

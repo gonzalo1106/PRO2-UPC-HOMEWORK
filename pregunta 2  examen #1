@@ -1,0 +1,49 @@
+public class Estudiante
+{
+    public int Id { get; set; }
+    public string NombreCompleto { get; set; }
+    public int Carnet { get; set; }
+    public string Genero { get; set; }
+    public int Edad { get; set; }
+
+    public void Mostrar()
+    {
+        Console.WriteLine($"ID: {Id}");
+        Console.WriteLine($"Nombre Completo: {NombreCompleto}");
+        Console.WriteLine($"Carnet: {Carnet}");
+        Console.WriteLine($"Genero: {Genero}");
+        Console.WriteLine($"Edad: {Edad}");
+    }
+}
+
+public class Inscrito
+{
+    public int Id { get; set; }
+    public string Fecha { get; set; }
+    public int IdEstudiante { get; set; }
+    public int IdMateria { get; set; }
+
+    public void Mostrar()
+    {
+        Console.WriteLine($"ID: {Id}");
+        Console.WriteLine($"Fecha: {Fecha}");
+        Console.WriteLine($"ID Estudiante: {IdEstudiante}");
+        Console.WriteLine($"ID Materia: {IdMateria}");
+    }
+}
+
+public class Materia
+{
+    public int Id { get; set; }
+    public string Nombre { get; set; }
+    public string Abreviatura { get; set; }
+    public int Capacidad { get; set; }
+
+    public void Mostrar()
+    {
+        Console.WriteLine($"ID: {Id}");
+        Console.WriteLine($"Nombre: {Nombre}");
+        Console.WriteLine($"Abreviatura: {Abreviatura}");
+        Console.WriteLine($"Capacidad: {Capacidad}");
+    }
+}
